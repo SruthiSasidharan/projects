@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table">
+    <tr>
+        <td>MobileName</td>
+        <td>Spec</td>
+        <td>Brand</td>
+        <td>Price</td>
+    </tr>
+    {% for mobile in mobiles %}
+    <tr>
+         <td>{{mobile.mobile_name}}</td>
+        <td>{{mobile.specs}}</td>
+        <td>{{mobile.brand}}</td>
+        <td>{{mobile.price}}</td>
+        <td><img src="{{mobile.image.url}}" alt="" width="100px" height="200px"></td>
+        <td><a href="{%url 'update' mobile.id%}">update</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
